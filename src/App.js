@@ -17,7 +17,8 @@ function App() {
     <div className="container">
       <h1>All Posts </h1>
       {posts.map(post => (
-        <div key={post.id} className="card">
+        <div>
+          <h3>{post.id}</h3>
           <h2>{post.title}</h2>
           <p>{post.body}</p>
           <small>author: User №{post.userId}</small>
