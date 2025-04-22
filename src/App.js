@@ -18,8 +18,8 @@ function App() {
       <h1>All Posts </h1>
       {posts.map(post => (
         <div>
-          <h3>{post.id}</h3>
-          <h2>{post.title}</h2>
+          <h2>{post.id}</h2>
+          <h3>{post.title}</h3>
           <p>{post.body}</p>
           <small>author: User №{post.userId}</small>
         </div>
