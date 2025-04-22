@@ -4,23 +4,30 @@ import './App.css';
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
       .get('https://jsonplaceholder.typicode.com/posts')
       .then(response => {
         setPosts(response.data);
+        setLoading(false);
       })
+      .catch(error => {
+        console.error('Ошибка при загрузке данных:', error);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) return <div className="container">Загрузка...</div>;
 
   return (
     <div className="container">
-      <h1>All Posts </h1>
       {posts.map(post => (
         <div key={post.id} className="card">
           <h2>{post.title}</h2>
           <p>{post.body}</p>
-          <small>author: User №{post.userId}</small>
+          <small>Автор: пользователь #{post.userId}</small>
         </div>
       ))}
     </div>
