@@ -4,12 +4,21 @@ import './App.css';
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const [comments, setComments] = useState([]);
 
   useEffect(() => {
     axios
       .get('https://jsonplaceholder.typicode.com/posts')
       .then(response => {
         setPosts(response.data);
+      })
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://jsonplaceholder.typicode.com/comments')
+      .then(response => {
+        setComments(response.data);
       })
   }, []);
 
@@ -23,6 +32,18 @@ function App() {
           <p>{post.body}</p>
           <small>author: User №{post.userId}</small>
         </div>
+        
+      ))}
+
+{comments.map(comment => (
+        <div>
+          <h2>{comment.id}</h2>
+          <h3>{comment.name}</h3>
+          <h4>{comment.email}</h4>
+          <p>{comment.body}</p>
+          <small>Post: №{comment.postId}</small>
+        </div>
+        
       ))}
     </div>
   );
