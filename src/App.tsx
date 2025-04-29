@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { getPosts, Post } from './api';
-import PostList from './PostList';
+import { getPosts } from './api/getPosts';
+import { Post } from './components/Post';
+import PostList from './components/PostList';
 import './App.css';
 
 function App() {
