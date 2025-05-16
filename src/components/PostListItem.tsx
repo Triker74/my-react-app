@@ -3,11 +3,12 @@ import { Post } from "./Post";
 
 interface PostListItemProps {
     post: Post;
+    onPostClick: (postId: number) => void;
 }
 
-const PostListItem: React.FC<PostListItemProps> = ({ post }) => {
+const PostListItem: React.FC<PostListItemProps> = ({ post, onPostClick }) => {
     return (
-        <div>
+        <div className="post-list-item" onClick={() => onPostClick(post.id)}>
             <h2>{post.id}</h2>
             <h3>{post.title}</h3>
             <p>{post.body}</p>
