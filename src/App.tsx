@@ -5,9 +5,9 @@ import { Post } from './api/requests/posts/Post';
 import { Comment } from './api/requests/posts/comments/Comments';
 import PostList from './components/PostList/PostList';
 import CommentsModal from './components/CommentsList/commentsModal/CommentsModal';
-import './styles/Post.css';
+import './styles/Post/Post.css';
 import './components/CommentsList/Comments.css';
-import './components/CommentsListCommentsModal.css';
+import './components/CommentsList//commentsModal/CommentsModal.css';
 
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);
