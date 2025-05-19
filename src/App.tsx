@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { getPosts } from './api/getPosts';
-import { getComments } from './api/getComments';
-import { Post } from './components/Post';
-import { Comment } from './components/Comments';
-import PostList from './components/PostList';
-import CommentsModal from './components/CommentsModal';
+import { getPosts } from './api//requests/posts/getPosts';
+import { getComments } from './api/requests/posts/comments/getComments';
+import { Post } from './api/requests/posts/Post';
+import { Comment } from './api/requests/posts/comments/Comments';
+import PostList from './components/PostList/PostList';
+import CommentsModal from './components/CommentsList/commentsModal/CommentsModal';
 import './styles/Post.css';
-import './styles/Comments.css';
-import './styles/CommentsModal.css';
+import './components/CommentsList/Comments.css';
+import './components/CommentsListCommentsModal.css';
 
 function App() {
   const [posts, setPosts] = useState<Post[]>([]);
