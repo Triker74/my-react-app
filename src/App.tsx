@@ -1,37 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import { getPosts } from './app/api//requests/posts/getPosts';
-import { getComments } from './app/api/requests/posts/comments/getComments';
-import { Post } from './app/api/entities/Devices/IPost';
-import { Comment } from './app/api/entities/Devices/IComments'
+import React, { useEffect } from 'react';
 import PostList from './pages/Devices/components/PostList/PostList';
 import CommentsModal from './pages/Devices/components/CommentsList/components/commentsModal/CommentsModal';
 import './pages/Devices/components/PostList/Post.css';
 import './pages/Devices/components/CommentsList/Comments.css';
 import './pages/Devices/components/CommentsList/components/commentsModal/CommentsModal.css';
+import usePostStore from './stores/usePostStore';
+import useCommentStore from './stores/useCommentStore';
 
 function App() {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [comments, setComments] = useState<Comment[]>([]);
-  const [selectedPost, setSelectedPost] = useState<Post | null>(null);
+  const { posts, selectedPost, fetchPosts, selectPost, clearSelectedPost } = usePostStore();
+  const { comments, fetchComments, clearComments } = useCommentStore();
 
   useEffect(() => {
-    getPosts().then(data => {
-      setPosts(data);
-    });
-  }, []);
+    fetchPosts();
+  }, [fetchPosts]);
 
   const handlePostClick = async (postId: number) => {
     const selected = posts.find(post => post.id === postId);
     if (selected) {
-      setSelectedPost(selected);
-      const commentsData = await getComments(postId);
-      setComments(commentsData);
+      selectPost(selected);
+      await fetchComments(postId);
     }
   };
 
   const handleCloseModal = () => {
-    setSelectedPost(null);
-    setComments([]);
+    clearSelectedPost();
+    clearComments();
   };
 
   return (
