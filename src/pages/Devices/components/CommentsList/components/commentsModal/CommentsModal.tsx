@@ -1,6 +1,6 @@
 import React from 'react';
-import { Comment } from '../../../api/requests/posts/comments/Comments';
-import CommentsList from '../CommentsList';
+import { Comment } from '../../../../../../app/api/entities/Devices/IComments';
+import CommentsList from '../../CommentsList';
 
 interface CommentsModalProps {
     comments: Comment[];

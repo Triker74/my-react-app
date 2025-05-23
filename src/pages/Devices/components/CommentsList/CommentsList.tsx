@@ -1,5 +1,5 @@
 import React from 'react';
-import { Comment } from '../../api/requests/posts/comments/Comments';
+import { Comment } from '../../../../app/api/entities/Devices/IComments';
 
 interface CommentsListProps {
     comments: Comment[];

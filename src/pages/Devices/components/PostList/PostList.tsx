@@ -1,6 +1,6 @@
 import React from 'react';
-import { Post } from '../../api/requests/posts/Post';
-import PostListItem from './PostListItem/PostListItem';
+import { Post } from '../../../../app/api/entities/Devices/IPost';
+import PostListItem from './components/PostListItem/PostListItem';
 
 interface PostListProps {
     posts: Post[];

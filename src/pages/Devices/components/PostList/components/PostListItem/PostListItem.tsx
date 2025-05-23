@@ -1,5 +1,5 @@
 import React from "react";
-import { Post } from '../../../api/requests/posts/Post';
+import { Post } from '../../../../../../app/api/entities/Devices/IPost';
 
 interface PostListItemProps {
     post: Post;
