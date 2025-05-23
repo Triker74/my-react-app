@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { getPosts } from '../app/api//requests/posts/getPosts';
+import { getPosts } from '../app/api/requests/posts/getPosts';
 import { Post } from '../app/api/entities/Devices/IPost';
 
 interface PostStore {
