@@ -2,19 +2,29 @@ import { create } from 'zustand';
 import { getComments } from '../app/api/requests/posts/comments/getComments';
 import { Comment } from '../app/api/entities/Devices/IComments';
 
-interface CommentStore {
+interface CommentState {
   comments: Comment[];
-  fetchComments: (postId: number) => Promise<void>;
-  clearComments: () => void;
 }
 
-const useCommentStore = create<CommentStore>((set) => ({
+interface CommentActions {
+  fetchComments: (postId: number) => Promise<void>;
+  clearComments: () => void;
+  clear: () => void;
+}
+
+const initState: CommentState = {
   comments: [],
+};
+
+const useCommentStore = create<CommentState & CommentActions>((set) => ({
+  ...initState,
+
   fetchComments: async (postId: number) => {
-    const data = await getComments(postId);
+    const data: Comment[] = await getComments(postId);
     set({ comments: data });
   },
   clearComments: () => set({ comments: [] }),
+  clear: () => set(initState),
 }));
 
 export default useCommentStore;
