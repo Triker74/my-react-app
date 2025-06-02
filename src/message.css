@@ -1,0 +1,14 @@
+.ant-message {
+    z-index: 2000 !important;
+    position: fixed !important;
+    top: 10px !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.ant-message-notice-content {
+    background-color: #fff !important;
+    color: #000 !important;
+    padding: 10px 20px !important;
+    border-radius: 4px !important;
+}

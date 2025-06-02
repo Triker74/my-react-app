@@ -1,7 +1,12 @@
-import axios from 'axios';
 import { Comment } from '../../../entities/Devices/IComments';
+import apiClient from '../../../../../shared/api/Interceptors';
 
 export const getComments = async (postId: number): Promise<Comment[]> => {
-    const response = await axios.get<Comment[]>(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
-    return response.data;
+    try {
+        const response = await apiClient.get<Comment[]>(`/posts/${postId}/comments`);
+        return response.data;
+    } catch (error) {
+        console.error('Ошибка в getComments:', error);
+        return [];
+    }
 };

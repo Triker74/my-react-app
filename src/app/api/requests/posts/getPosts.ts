@@ -1,7 +1,12 @@
-import axios from 'axios';
 import { Post } from '../../entities/Devices/IPost';
+import apiClient from '../../../../shared/api/Interceptors';
 
 export const getPosts = async (): Promise<Post[]> => {
-    const response = await axios.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
-    return response.data;
+    try {
+        const response = await apiClient.get<Post[]>('/posts');
+        return response.data;
+    } catch (error) {
+        console.error('Ошибка в getPosts:', error);
+        return [];
+    }
 };
