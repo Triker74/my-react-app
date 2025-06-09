@@ -1,8 +1,15 @@
+.chartOuterWrapper { 
+  max-width: 900px; 
+  width: 100%;       
+  margin: 0 auto;    
+
+}
+
 .chartContainerWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 100%; 
 }
 
 .chartTitle {
