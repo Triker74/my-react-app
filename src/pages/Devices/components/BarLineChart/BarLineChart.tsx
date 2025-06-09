@@ -1,5 +1,5 @@
 import {
-    ChartContainer,
+    ResponsiveChartContainer,
     ChartsXAxis,
     ChartsYAxis,
     ChartsLegend,
@@ -24,9 +24,8 @@ const BarLineChart: FC = () => {
         <div className="chartContainerWrapper">
             <h2 className="chartTitle">По автотранспорту с 10.02.25-16.02.25 (выход, ремонт, дтп, итог) ДТП-0.</h2>
 
-            <ChartContainer
-                width={900}
-                height={400}
+            <ResponsiveChartContainer
+                height={400} 
                 series={[
                     {
                         type: 'bar',
@@ -77,7 +76,7 @@ const BarLineChart: FC = () => {
                     }}
                 />
                 <ChartsTooltip trigger="item" />
-            </ChartContainer>
+            </ResponsiveChartContainer>
         </div>
     );
 };
