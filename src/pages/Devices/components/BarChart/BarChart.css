@@ -1,0 +1,20 @@
+.chartOuterWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+  }
+  
+  .chartContainerWrapper {
+    width: 100%;
+    max-width: 1000px;
+    overflow: auto;
+  }
+  
+  .chartTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  

@@ -1,10 +1,10 @@
 import React from 'react';
-import BarLineChart from './pages/Devices/components/BarLineChart/BarLineChart';
+import DashboardPage from './pages/Devices/components/DashboardPage/DashboardPage';
 
 function App() {
   return (
-    <div >
-      <BarLineChart />
+    <div className="App">
+      <DashboardPage />
     </div>
   );
 }

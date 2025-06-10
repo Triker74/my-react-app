@@ -9,11 +9,16 @@ import {
     MarkPlot,
   } from '@mui/x-charts';
   import { FC } from 'react';
-  import { chartData, ChartPoint } from './components/ChartData/ChartData';
+  import { chartData, ChartPoint } from './components/ChartData/ChartData'
   
   import './BarLineChart.css';
   
-  const BarLineChart: FC = () => {
+  interface BarLineChartProps {
+    title: string;
+    chartData: ChartPoint[];
+  }
+  
+  const BarLineChart: FC<BarLineChartProps> = ({ title, chartData }) => {
     const xLabels = chartData.map((point: ChartPoint) => point.label);
     const fixedValueColumnData = chartData.map(() => 100);
     const totalData = chartData.map((point: ChartPoint) => point.total);
@@ -21,9 +26,10 @@ import {
     const lineData = chartData.map((point: ChartPoint) => point.result);
   
     return (
-      <div className="chartOuterWrapper">
-        <div className="chartContainerWrapper">
-          <h2 className="chartTitle">По автотранспорту с 10.02.25-16.02.25 (выход, ремонт, дтп, итог) ДТП-0.</h2>
+      <div className="chartOuterWrapper"> 
+        <div className="chartContainerWrapper"> 
+          <h2 className="chartTitle">{title}</h2> 
+  
           <ResponsiveChartContainer
             height={400}
             series={[
@@ -40,10 +46,10 @@ import {
                 color: '#808080',
               },
               {
-                type: 'bar',
-                data: accidentData,
-                label: 'ДТП',
-                color: '#d32f2f',
+              type: 'bar',
+              data: accidentData,
+              label: 'ДТП',
+              color: '#d32f2f',
               },
               {
                 type: 'line',
