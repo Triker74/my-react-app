@@ -1,0 +1,25 @@
+.chartOuterWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  .chartContainerWrapper {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .chartTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5em;
+    color: rgba(0, 0, 0, 0.87);
+    text-align: center;
+  }

@@ -3,7 +3,10 @@ import BarLineChart from '../BarLineChart/BarLineChart';
 import { chartData as chartData1 } from '../BarLineChart/components/ChartData/ChartData'
 import BarChart from '../BarChart/BarChart';
 import { barChartData } from '../BarChart/components/BarChartData/BarChartData';
-
+import PieChartComponent from '../PieChart/PieChart';
+import { PieChartData } from '../PieChart/components/PieChartData/PieChartData';
+import BarSeriesChart from '../BarSeriesChart/BarSeriesChart';
+import { chartSeriesData } from '../BarSeriesChart/components/ChartData/ChartSeriesData'
 import './DashboardPage.css';
 
 const DashboardPage: React.FC = () => {
@@ -18,6 +21,14 @@ const DashboardPage: React.FC = () => {
                 <BarChart
                     title="Время доезда"
                     chartData={barChartData}
+                />
+                <PieChartComponent
+                    title="Выполнено от общего колиева"
+                    chartData={PieChartData}
+                />
+                <BarSeriesChart
+                    title="ПОВТОРЫ. В разрезе подстанций в сравнении 2-х недель (%)"
+                    chartData={chartSeriesData}
                 />
             </div>
         </div>
