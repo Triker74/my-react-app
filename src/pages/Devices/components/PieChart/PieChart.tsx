@@ -36,7 +36,7 @@ const PieChartComponent: React.FC<PieChartProps> = ({ title, chartData }) => {
                             outerRadius: 200,
                             cornerRadius: 5,
                             paddingAngle: 2,
-                            valueFormatter: (item) => `${item.label}: ${item.value}`,
+                            valueFormatter: (item) => `${item.value}`,
                             arcLabel: (item) => `${item.value}`,
                             arcLabelMinAngle: 0,
                         },
