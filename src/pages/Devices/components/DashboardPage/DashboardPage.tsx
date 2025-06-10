@@ -23,7 +23,7 @@ const DashboardPage: React.FC = () => {
                     chartData={barChartData}
                 />
                 <PieChartComponent
-                    title="Выполнено от общего колиева"
+                    title="Выполнено от общего количества"
                     chartData={PieChartData}
                 />
                 <BarSeriesChart
