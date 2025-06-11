@@ -44,7 +44,6 @@ const BarChart: React.FC<BarChartProps> = ({ title, chartData }) => {
         {
             type: 'bar',
             data,
-            color: colors[0],
         },
     ];
 
