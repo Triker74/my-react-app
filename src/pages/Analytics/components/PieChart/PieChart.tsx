@@ -3,7 +3,7 @@ import { PieChart } from '@mui/x-charts/PieChart';
 import { PieChartData, PieChartPoint } from './components/PieChartData/PieChartData';
 import useResizeObserver from '@react-hook/resize-observer';
 
-import './PieChart.css';
+import '../Styles/Charts.css';
 
 interface PieChartProps {
     title: string;

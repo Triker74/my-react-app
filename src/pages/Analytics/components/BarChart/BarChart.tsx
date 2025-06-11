@@ -5,7 +5,7 @@ import { BarSeriesType } from '@mui/x-charts/models';
 import { BarChartPoint } from './components/BarChartData/BarChartData';
 import useResizeObserver from '@react-hook/resize-observer';
 
-import './BarChart.css';
+import '../Styles/Charts.css';
 
 interface BarChartProps {
     title?: string;

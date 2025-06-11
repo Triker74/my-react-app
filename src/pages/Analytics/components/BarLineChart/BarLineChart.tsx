@@ -11,7 +11,7 @@ import {
   import { FC } from 'react';
   import { chartData, ChartPoint } from './components/ChartData/ChartData'
   
-  import './BarLineChart.css';
+  import '../Styles/Charts.css';
   
   interface BarLineChartProps {
     title: string;

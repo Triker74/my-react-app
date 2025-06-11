@@ -1,5 +1,5 @@
 import React from 'react';
-import DashboardPage from './pages/Devices/components/DashboardPage/DashboardPage';
+import DashboardPage from './pages/Analytics/components/DashboardPage/DashboardPage';
 
 function App() {
   return (
